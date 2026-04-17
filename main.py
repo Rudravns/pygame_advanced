@@ -18,7 +18,7 @@ class APP:
         poly = pygame_advanced.Polygon([(100,100), (200,200), (300,100)])
         line_multple = pygame_advanced.Line.from_points((100,100), (500,200), (300,300))
 
-        image = pygame_advanced.image()
+        #image = pygame_advanced.image()
 
         while True:
             self.screen.fill((255,255,255))

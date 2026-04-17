@@ -48,6 +48,9 @@ class Rect(pygame.Rect):
         self.base_x += dx / vars.SCALE["width"]
         self.base_y += dy / vars.SCALE["height"]
         self.update_scaling()
+    
+    def __del__(self):
+        vars.ALL_OBJECTS_CACHE.remove(self)
 
 class Circle:
     #use slots
@@ -102,6 +105,9 @@ class Circle:
             surface = vars.DISPLAY
         pygame.draw.circle(surface, color, (int(self.circle.x), int(self.circle.y)), int(self.radius))
     
+    def __del__(self):
+        vars.ALL_OBJECTS_CACHE.remove(self)
+
 class Polygon:
     #use slots
     __slots__ = ("base_points", "points", "base_center", "center")
@@ -153,6 +159,9 @@ class Polygon:
             surface = vars.DISPLAY
 
         pygame.draw.polygon(surface, color, (self.points.get_points()))
+
+    def __del__(self):
+        vars.ALL_OBJECTS_CACHE.remove(self)
 
 class Line:
     __slots__ = ("base_points", "points", "thickness")
@@ -222,3 +231,5 @@ class Line:
 
         pygame.draw.lines(surface, color, False, pts, int(self.thickness))
     
+    def __del__(self):
+        vars.ALL_OBJECTS_CACHE.remove(self)
