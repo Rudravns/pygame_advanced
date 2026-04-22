@@ -17,6 +17,7 @@ from .pg_help import *
 from .pg_obj import *
 from .collide import *
 from .disk import *
+from .image import *
 
 
 
@@ -34,6 +35,8 @@ __all__ = [
     "collide",
 
     "load_json", "save_json", "load_font",
+
+    "image",
 
 ]
 

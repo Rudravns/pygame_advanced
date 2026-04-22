@@ -11,6 +11,8 @@ class APP:
 
         self.clock = pygame.time.Clock()
 
+        self.img = pygame_advanced.image("test.png")
+
     def run(self):
         
         rect = pygame_advanced.Rect(300,300,100,100)
@@ -18,13 +20,12 @@ class APP:
         poly = pygame_advanced.Polygon([(100,100), (200,200), (300,100)])
         line_multple = pygame_advanced.Line.from_points((100,100), (500,200), (300,300))
 
-        #image = pygame_advanced.image()
-
+    
         while True:
             self.screen.fill((255,255,255))
             self.clock.tick(0)
             
-
+            self.img.draw((500,50), hitbox=True)
             
             if pygame.mouse.get_pressed()[0]:
                 rect.center = pygame.mouse.get_pos()
